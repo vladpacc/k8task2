@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mysql-rs
+  name: mysql-lb
+  namespace: default
+  resourceVersion: "3752729"
+  selfLink: /api/v1/namespaces/default/services/mysql-lb
+  uid: d0a523db-ae74-11ea-baef-42010a8001f0
+spec:
+  clusterIP: 10.0.5.47
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysql-rs-pod
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
