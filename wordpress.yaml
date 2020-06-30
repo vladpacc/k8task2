@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-28T22:45:50Z"
+  labels:
+    app: wordpress
+  name: tasklb
+  namespace: default
+  resourceVersion: "7893657"
+  selfLink: /api/v1/namespaces/default/services/tasklb
+  uid: 1d7847db-b991-11ea-baef-42010a8001f0
+spec:
+  clusterIP: 10.0.9.67
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32131
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: wordpress
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
